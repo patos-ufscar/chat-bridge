@@ -1,0 +1,35 @@
+[general]
+
+# https://github.com/42wim/matterbridge/wiki/Section-Discord-%28basic%29
+[discord]
+    [discord.patos]
+    Token="$DISCORD_TOKEN"
+    Server="name or uid of guild"
+    AutoWebhooks=true
+    RemoteNickFormat="<{NICK}@{PROTOCOL}> "
+    EditSuffix=" (edited)"
+    UseLocalAvatar=["telegram.patos"]
+    PreserveThreading=true
+
+# https://github.com/42wim/matterbridge/wiki/Section-Telegram-%28basic%29
+[telegram]
+    [telegram.patos]
+    Token="$TELEGRAM_TOKEN"
+    RemoteNickFormat="<{NICK}@{PROTOCOL}> "
+    RemoteNickFormat="&lt;<b>{NICK}</b>@{PROTOCOL}&gt; "
+    MessageFormat="HTMLNick"
+    EditSuffix=" (edited)"
+    QuoteFormat="{MESSAGE}"
+    UseFirstName=true
+    PreserveThreading=true
+
+
+[[gateway]]
+name="geral"                # nome do gateway (normalmente o nome do canal)
+enable=true
+[[gateway.inout]]
+account="telegram.patos"    # nome do protocolo
+channel="prtocolchannel"    # nome/id do canal
+[[gateway.inout]]
+account="discord.patos"     # nome do protocolo
+channel="prtocolchannel"    # nome/id do canal
